@@ -219,7 +219,8 @@ if __name__ == '__main__':
     else:
         print("Choose a spec (if empty, it will extract for all specs): ")
         selectedSpec = input()
-
+    print("Choose a skill name (optional): ")
+    selectedSkill = input()
     print("Finally, select a filename (If empty, it will be class+spec.csv. If no class selected, it will be skills.csv): ")
     selectedFile = input()
 
