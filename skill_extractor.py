@@ -1,11 +1,9 @@
 import csv
 import regex as re
 
+# TODO: Embed the .csv file so there is no need for external files (OR make use of cloud storage and extract it from there?)
 
-# Objetivos: Quiero una consola que me permita extraer determinadas Skill IDs de determinadas clases y specs
-# Secundario: Extraer Skill IDs de una skill en particular indicando class, spec y nombre de skill.
-
-#Me devuelve un patron regex ajustado
+# Returns an adjusted regex pattern
 def genPattern(className, specID):
     classString = ""
     specString = ""
@@ -18,8 +16,10 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "spectral":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
         else:
-            print("Spec not valid! Try one of these values: [1,2,3]")
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
             return None
         return classString + specString
 
@@ -31,6 +31,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "wolf":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "destroyer" or className.lower() == "des":
@@ -41,6 +46,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "twin steel": #? xd Idk 
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "forcemaster" or className.lower() == "fm":
@@ -51,6 +61,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "lightning":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "assasin" or className.lower() == "sin":
@@ -61,6 +76,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "phantom":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "summoner" or className.lower() == "sum":
@@ -71,6 +91,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "fantasy":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "warlock" or className.lower() == "wl":
@@ -81,6 +106,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "tba":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "swordmaster" or className.lower() == "bd":
@@ -91,6 +121,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "ghost":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "soulfighter" or className.lower() == "sf":
@@ -101,6 +136,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "tba":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "shooter" or className.lower() == "gun":
@@ -111,6 +151,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "tba":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "warrior" or className.lower() == "war":
@@ -121,6 +166,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "tba":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "archer" or className.lower() == "arc":
@@ -131,6 +181,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "tba":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
 
     elif className.lower() == "thunderer" or className.lower() == "ast":
@@ -141,6 +196,11 @@ def genPattern(className, specID):
             specString = "G2_"
         elif specID == "3" or specID.lower() == "tba":
             specString = "G3_"
+        elif specID == "0" or specID == "":
+            specString = "G[1-3]_"
+        else:
+            print("Spec not valid! Try one of these values: [0,1,2,3]")
+            return None
         return classString + specString
     else :
         print("Class not valid! Try one of these values: [bm, kfm, fm, des, sin, sum, bd, wl, sf, gun, war, arc, ast]")
@@ -157,7 +217,7 @@ if __name__ == '__main__':
         # Global pattern for extracting skills from all classes
         regexPattern = r'.*_G[1-3].*'
     else:
-        print("Choose a spec: ")
+        print("Choose a spec (if empty, it will extract for all specs): ")
         selectedSpec = input()
 
     print("Finally, select a filename (If empty, it will be class+spec.csv. If no class selected, it will be skills.csv): ")
